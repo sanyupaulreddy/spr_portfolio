@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import { ThemeProvider } from './ThemeContext'; // Corrected path: './ThemeContext' instead of './components/ThemeContext'
+import { Helmet } from 'react-helmet'; // Change the import to react-helmet
+import { ThemeProvider } from './ThemeContext';
 import Sidebar from './components/Sidebar';
 import './App.css';
 
@@ -16,19 +16,19 @@ const Resume = lazy(() => import('./components/Resume'));
 function App() {
   return (
     <ThemeProvider>
-      <Helmet>
-        <title>Sanyu Paul Reddy Singareddy - Portfolio</title>
-        <meta
-          name="description"
-          content="Portfolio of Sanyu Paul Reddy Singareddy, Computer Science student specializing in MERN stack and IoT solutions."
-        />
-        <meta
-          name="keywords"
-          content="portfolio, Sanyu Paul Reddy, MERN stack, IoT, full-stack developer"
-        />
-      </Helmet>
       <Router basename="/my_portfolio">
         <div className="app-container">
+          <Helmet>
+            <title>Sanyu Paul Reddy Singareddy - Portfolio</title>
+            <meta
+              name="description"
+              content="Portfolio of Sanyu Paul Reddy Singareddy, Computer Science student specializing in MERN stack and IoT solutions."
+            />
+            <meta
+              name="keywords"
+              content="portfolio, Sanyu Paul Reddy, MERN stack, IoT, full-stack developer"
+            />
+          </Helmet>
           <Sidebar />
           <main className="main-content">
             <Suspense fallback={<div>Loading...</div>}>

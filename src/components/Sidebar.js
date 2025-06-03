@@ -1,36 +1,48 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext';
 
-const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <div className={`app-container ${theme}`}>
-      <div className={`sidebar ${theme} ${isOpen ? 'open' : ''}`}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="hamburger"
-        >
-          ☰
+    <>
+      <button className="hamburger" onClick={toggleSidebar}>
+        {isOpen ? '✖' : '☰'}
+      </button>
+      <nav className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <h3>Sanyu Paul Reddy</h3>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
         </button>
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
-        </button>
-        <h3>Portfolio</h3>
         <nav>
-          <Link to="/">Personal Info</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/skills">Skills</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/certifications">Certifications</Link>
-          <Link to="/interests">Personal Interests</Link>
-          <Link to="/resume">View Resume</Link>
+          <NavLink to="/" exact className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Personal Info
+          </NavLink>
+          <NavLink to="/education" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Education
+          </NavLink>
+          <NavLink to="/skills" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Skills
+          </NavLink>
+          <NavLink to="/projects" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Projects
+          </NavLink>
+          <NavLink to="/certifications" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Certifications
+          </NavLink>
+          <NavLink to="/interests" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Interests
+          </NavLink>
+          <NavLink to="/resume" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+            Resume
+          </NavLink>
         </nav>
-      </div>
-      <div className="main-content">{children}</div>
-    </div>
+      </nav>
+    </>
   );
 };
 
