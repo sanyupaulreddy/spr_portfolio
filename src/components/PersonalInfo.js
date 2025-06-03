@@ -5,11 +5,11 @@ const PersonalInfo = () => (
     <div className="info-content">
       <h1>Sanyu Paul Reddy Singareddy</h1>
       <div className="contact-item">
-        <img src="/assets/gmail_logo.png" alt="Gmail" />
+        <img src={`${process.env.PUBLIC_URL}/assets/gmail_logo.png`} alt="Gmail" />
         <a href="mailto:sanyu.p.singareddy@gmail.com">sanyu.p.singareddy@gmail.com</a>
       </div>
       <div className="contact-item">
-        <img src="/assets/linkedin_logo.png" alt="LinkedIn" />
+        <img src={`${process.env.PUBLIC_URL}/assets/linkedin_logo.png`} alt="LinkedIn" />
         <a
           href="https://www.linkedin.com/in/sanyu-paul-reddy-singareddy-4a5aab2b7/"
           target="_blank"
@@ -19,7 +19,7 @@ const PersonalInfo = () => (
         </a>
       </div>
       <div className="contact-item">
-        <img src="/assets/git_logo.png" alt="GitHub" />
+        <img src={`${process.env.PUBLIC_URL}/assets/git_logo.png`} alt="GitHub" />
         <a href="https://github.com/sanyupaulreddy" target="_blank" rel="noreferrer">
           GitHub Profile
         </a>
@@ -32,7 +32,7 @@ const PersonalInfo = () => (
       </p>
     </div>
     <div className="profile-image">
-      <img src="/assets/profile.jpg" alt="Profile" />
+      <img src={`${process.env.PUBLIC_URL}/assets/profile.jpg`} alt="Profile" />
     </div>
   </div>
 );
