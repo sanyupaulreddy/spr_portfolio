@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ThemeProvider } from './components/ThemeContext';
+import { ThemeProvider } from './ThemeContext'; // Corrected path: './ThemeContext' instead of './components/ThemeContext'
 import Sidebar from './components/Sidebar';
 import './App.css';
 
