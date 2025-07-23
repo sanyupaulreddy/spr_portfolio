@@ -45,7 +45,7 @@ const MainContent = ({ children }) => {
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/my_portfolio">
+      <Router basename="/spr_portfolio">
         <div className="app-container">
 
           <Helmet>
