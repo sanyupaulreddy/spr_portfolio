@@ -7,6 +7,7 @@ const Certifications = () => {
     { name: 'Introduction to Python Programming', file: `${process.env.PUBLIC_URL}/assets/Intro_Python_prgm.pdf` },
     { name: 'Introduction to HTML', file: `${process.env.PUBLIC_URL}/assets/Intro_to_HTML.pdf` },
     { name: 'Introduction to Python', file: `${process.env.PUBLIC_URL}/assets/Introduction_to_py.pdf` },
+    { name: 'Prompt Engineering – LinkedIn', file: `${process.env.PUBLIC_URL}/assets/Prompt_Enginnering_Linkedin.pdf` }
   ];
 
   return (

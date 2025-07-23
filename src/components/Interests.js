@@ -4,7 +4,9 @@ const Interests = () => {
   const personalInterests = [
     'Playing Cricket',
     'Chess',
-    '(Add more later)', // Keeping as requested; you can remove or replace this later
+    'Trying new Cuisines',
+    'Travelling',
+    // Keeping as requested; you can remove or replace this later
   ];
 
   return (

@@ -8,6 +8,9 @@ const Sidebar = () => {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
+  // Sun/Moon unicode, or you can import an svg if you prefer
+  const themeIcon = theme === 'light' ? '🌜' : '🌞';
+
   return (
     <>
       <button className="hamburger" onClick={toggleSidebar}>
@@ -15,29 +18,29 @@ const Sidebar = () => {
       </button>
       <nav className={`sidebar ${isOpen ? 'open' : ''}`}>
         <h3>Sanyu Paul Reddy</h3>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle light/dark mode">
+          {themeIcon}
         </button>
         <nav>
-          <NavLink to="/" exact className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/" exact="true" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Personal Info
           </NavLink>
-          <NavLink to="/education" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/education" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Education
           </NavLink>
-          <NavLink to="/skills" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/skills" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Skills
           </NavLink>
-          <NavLink to="/projects" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/projects" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Projects
           </NavLink>
-          <NavLink to="/certifications" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/certifications" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Certifications
           </NavLink>
-          <NavLink to="/interests" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/interests" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Interests
           </NavLink>
-          <NavLink to="/resume" className="nav-link" activeClassName="active" onClick={toggleSidebar}>
+          <NavLink to="/resume" className="nav-link" activeclassname="active" onClick={toggleSidebar}>
             Resume
           </NavLink>
         </nav>

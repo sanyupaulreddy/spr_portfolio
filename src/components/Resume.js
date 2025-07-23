@@ -7,7 +7,7 @@ const Resume = () => (
       <h3>My Resume</h3>
       <iframe
         src={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-        title="Resume Preview"
+        title="Resume Preview"  
         className="pdf-embed"
       />
     </div>
